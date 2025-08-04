@@ -1,12 +1,10 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 
 import Image from "next/image";
 import roney from "@/assets/images/roney.png";
 import {
   motion,
-  useMotionValue,
-  useMotionValueEvent,
   useScroll,
   useTransform,
 } from "framer-motion";
