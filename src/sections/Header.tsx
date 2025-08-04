@@ -9,7 +9,6 @@ import Image from "next/image";
 import github from "@/assets/images/github.png";
 
 export const Header = () => {
-  const [clicked, setClicked] = useState(false);
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
 
   return (
@@ -41,14 +40,13 @@ export const Header = () => {
 
           {/* Desktop Buttons */}
           <div className="hidden lg:gap-3 lg:flex">
-            <a href="https://github.com/roneymoon" target="_blank" className="relative inline-flex items-center justify-center text-xs tracking-widest uppercase font-bold h-10 px-6 rounded-lg z-0 transition-all bg-gray-100 text-gray-950">
+            <a
+              href="https://github.com/roneymoon"
+              target="_blank"
+              className="relative inline-flex items-center justify-center text-xs tracking-widest uppercase font-bold h-10 px-6 rounded-lg z-0 transition-all bg-gray-100 text-gray-950"
+            >
               <span className="mr-2">
-                <Image
-                  src={github}
-                  alt="github"
-                  width={24}
-                  height={24}
-                />
+                <Image src={github} alt="github" width={24} height={24} />
               </span>
               Github
             </a>
@@ -59,8 +57,6 @@ export const Header = () => {
           <button
             className="size-10 rounded-lg animated-border lg:hidden bg-black relative active:click-pulse z-50"
             onClick={() => {
-              setClicked(true);
-              setTimeout(() => setClicked(false), 400);
               setIsMobileNavOpen((curr) => !curr);
             }}
           >

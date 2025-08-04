@@ -2,8 +2,8 @@ import {Header} from "@/sections/Header";
 import {Hero} from "@/sections/Hero"
 
 import LogoTicker from "@/sections/LogoTicker";
-import {Pricing} from "@/sections/Pricing";
-import Testimonials from "@/sections/Testimonials";
+// import {Pricing} from "@/sections/Pricing";
+// import Testimonials from "@/sections/Testimonials";
 import {Projects} from "@/sections/Projects";
 
 export default function Home() {

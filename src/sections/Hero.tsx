@@ -8,7 +8,6 @@ import {
   useMotionValue,
   useMotionValueEvent,
   useScroll,
-  useSpring,
   useTransform,
 } from "framer-motion";
 
@@ -16,10 +15,10 @@ import underlineImage from "@/assets/images/underline.svg?url";
 import dashboard from "@/assets/images/robot.jpg";
 
 import { Orbit } from "@/components/Orbit";
-import { Planet } from "@/components/Planet";
+// import { Planet } from "@/components/Planet";
 
-import { ArrowRight } from 'lucide-react';
-import Link from 'next/link';
+import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 import NoticeIcon from "@/components/NoticeIcon";
 
 const useMousePosition = () => {
@@ -64,7 +63,7 @@ const useMousePosition = () => {
 
 export const Hero = () => {
   const sectionRef = useRef(null);
-  const { xProgress, yProgress } = useMousePosition();
+  // const { xProgress, yProgress } = useMousePosition();
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -73,7 +72,6 @@ export const Hero = () => {
   });
 
   const transformedY = useTransform(scrollYProgress, [0, 1], [200, -200]);
-
 
   return (
     <section ref={sectionRef} className="pt-24">
@@ -93,9 +91,7 @@ export const Hero = () => {
           >
             {/* Background Animation */}
             <motion.div
-
               className="absolute inset-0 -z-10"
-
               style={{
                 background: `radial-gradient(circle at 50% 40%, rgba(168, 85, 247, 0.25), rgba(24, 24, 27, 0.95))`,
                 WebkitMaskImage: `radial-gradient(circle at center, #63186a 50%, transparent 100%)`,
@@ -130,10 +126,12 @@ export const Hero = () => {
                 </div>
               </div>
             </motion.div>
-            
+
             {/* Notice Icon */}
-            <span className="absolute top-[30.4rem] right-[7.4rem]">Hover on this icon</span>
-            <NoticeIcon  className="absolute top-[30rem] right-[4rem]"/>
+            <span className="absolute top-[30.4rem] right-[7.4rem]">
+              Hover on this icon
+            </span>
+            <NoticeIcon className="absolute top-[30rem] right-[4rem]" />
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -154,19 +152,19 @@ export const Hero = () => {
                   {/* CTA Text with subtle shimmer */}
                   <motion.span
                     className="relative text-white flex items-center gap-2 justify-center"
-                    initial={{ backgroundPosition: '0% 50%' }}
-                    animate={{ backgroundPosition: '200% 50%' }}
+                    initial={{ backgroundPosition: "0% 50%" }}
+                    animate={{ backgroundPosition: "200% 50%" }}
                     transition={{
                       repeat: Infinity,
                       duration: 3,
-                      ease: 'linear',
+                      ease: "linear",
                     }}
                     style={{
                       backgroundImage:
-                        'linear-gradient(90deg, #fff, #aaa, #fff)',
-                      backgroundSize: '200% 200%',
-                      WebkitBackgroundClip: 'text',
-                      WebkitTextFillColor: 'transparent',
+                        "linear-gradient(90deg, #fff, #aaa, #fff)",
+                      backgroundSize: "200% 200%",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
                     }}
                   >
                     Streamify is live!
@@ -217,7 +215,7 @@ export const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.4 }}
             >
-              <span>Hello, I'm Roney Moon</span>
+              <span>Hello, I&apos;m Roney Moon</span>
 
               {/* Profile Image */}
               <motion.div
@@ -235,7 +233,6 @@ export const Hero = () => {
 
               <span className="hidden md:inline">a Full Stack Developer</span>
             </motion.div>
-
 
             {/* CTA Button */}
             <motion.div
@@ -353,7 +350,8 @@ export const Hero = () => {
                     className="bg-gray-800/70 backdrop-blur-sm border shadow-md text-gray-200 border-gray-100 rounded-xl p-4 w-72"
                   >
                     <div>
-                      Can you <strong>deploy</strong> a new version without downtime?
+                      Can you <strong>deploy</strong> a new version without
+                      downtime?
                     </div>
                     <div className="text-right mt-2 text-gray-400 text-sm font-semibold">
                       1m ago
@@ -372,7 +370,8 @@ export const Hero = () => {
                     className="bg-gray-800/70 backdrop-blur-sm border shadow-md text-gray-200 border-gray-100 rounded-xl p-4 w-72"
                   >
                     <div>
-                      Can you <strong>optimize</strong> core web vitals for a SaaS dashboard?
+                      Can you <strong>optimize</strong> core web vitals for a
+                      SaaS dashboard?
                     </div>
                     <div className="text-right mt-2 text-gray-400 text-sm font-semibold">
                       1m ago
@@ -391,8 +390,8 @@ export const Hero = () => {
                     className="bg-gray-800/70 backdrop-blur-sm border shadow-md text-gray-200 border-gray-100 rounded-xl p-4 w-72"
                   >
                     <div>
-                      Can you <strong>scale</strong> {" "}
-                      the app for 100K+ users seamlessly?
+                      Can you <strong>scale</strong> the app for 100K+ users
+                      seamlessly?
                     </div>
                     <div className="text-right mt-2 text-gray-400 text-sm font-semibold">
                       Just now
@@ -411,8 +410,8 @@ export const Hero = () => {
                     className="bg-gray-800/70 backdrop-blur-sm border shadow-md text-gray-200 border-gray-100 rounded-xl p-4 w-72"
                   >
                     <div>
-                      Can you <strong>scale</strong> {" "}
-                      the app for 100K+ users seamlessly?
+                      Can you <strong>scale</strong> the app for 100K+ users
+                      seamlessly?
                     </div>
                     <div className="text-right mt-2 text-gray-400 text-sm font-semibold">
                       Just now
@@ -436,7 +435,10 @@ export const Hero = () => {
                   {/* Floating CTA */}
                   <motion.div
                     className="absolute bottom-8 left-1/2 -translate-x-1/2 w-fit max-w-full p-[2px] rounded-full z-10"
-                    animate={{ backgroundPosition: ["0% 50%", "200% 50%"] }}
+                    animate={{
+                      opacity: 1,
+                      backgroundPosition: ["0% 50%", "200% 50%"],
+                    }}
                     transition={{
                       repeat: Infinity,
                       duration: 6,
@@ -448,8 +450,6 @@ export const Hero = () => {
                       backgroundSize: "400% 400%",
                     }}
                     initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 1.6 }}
                   >
                     <div className="bg-gray-950/80 px-4 py-2 rounded-full backdrop-blur-md shadow-md items-center justify-center text-sm hidden md:flex lg:flex text-white font-semibold whitespace-nowrap">
                       ⚡ Reliable Rapid Development
