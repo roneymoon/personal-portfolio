@@ -21,46 +21,6 @@ import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import NoticeIcon from "@/components/NoticeIcon";
 
-const useMousePosition = () => {
-  const [innerWidth, setInnerWidth] = useState(1);
-  const [innerHeight, setInnerHeight] = useState(1);
-  const clientX = useMotionValue(0);
-  const clientY = useMotionValue(0);
-  const xProgress = useTransform(clientX, [0, innerWidth], [0, 1]);
-  const yProgress = useTransform(clientX, [0, innerHeight], [0, 1]);
-
-  useMotionValueEvent(clientX, "change", (latest) => {
-    console.log("X:", latest); // FIXED
-  });
-
-  useMotionValueEvent(clientY, "change", (latest) => {
-    console.log("Y:", latest); // optional
-  });
-
-  useEffect(() => {
-    const handleResize = () => {
-      setInnerHeight(window.innerHeight);
-      setInnerWidth(window.innerWidth);
-    };
-
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      clientX.set(e.clientX);
-      clientY.set(e.clientY);
-    };
-
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
-
-  return { xProgress, yProgress };
-};
-
 export const Hero = () => {
   const sectionRef = useRef(null);
   // const { xProgress, yProgress } = useMousePosition();

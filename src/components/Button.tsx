@@ -29,7 +29,7 @@ export const Button = ({
 } & HTMLAttributes<HTMLButtonElement>) => {
   const [clicked, setClicked] = useState(false);
 
-  const handleClick = (e: any) => {
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     setClicked(true);
     setTimeout(() => setClicked(false), 400); // Clear animation class
     if (otherProps.onClick) otherProps.onClick(e); // Preserve original onClick
