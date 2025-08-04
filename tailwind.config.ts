@@ -13,6 +13,13 @@ const config: Config = {
       lg: "1200px",
     },
     extend: {
+      backgroundImage: {
+        "glass-gradient":
+          "linear-gradient(to bottom right, rgba(30,30,30,0.6), rgba(20,20,20,0.3))",
+      },
+      boxShadow: {
+        glass: "0 8px 32px 0 rgba(0, 0, 0, 0.37)",
+      },
       fontFamily: {
         heading: ["var(--font-sora)", "sans-serif"],
         body: ["var(--font-space-grotesk)", "sans-serif"],

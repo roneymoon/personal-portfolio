@@ -7,20 +7,24 @@ import {
 
 export const navItems = [
   {
-    name: "Features",
+    name: "About",
     href: "#features",
   },
   {
-    name: "Pricing",
+    name: "Skills",
     href: "#pricing",
   },
   {
-    name: "Testimonials",
-    href: "#testimonials",
+    name: "Projects",
+    href: "#blogs",
   },
   {
-    name: "Login",
-    href: "#login",
+    name: "Blogs",
+    href: "#faq",
+  },
+  {
+    name: "More",
+    href: "#faq",
   },
 ];
 
