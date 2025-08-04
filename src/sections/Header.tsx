@@ -1,5 +1,4 @@
 "use client";
-
 import { useState } from "react";
 import { navItems } from "./Footer";
 import { Button } from "@/components/Button";
